@@ -79,7 +79,6 @@ void	init_rest(t_pipex *data, int i)
 	init_paths_2(data, i);
 	init_paths_3(data, i, -1, -1);
 	// print_that_shit(data, i);
-
 	check_folder(data, i, -1, -1);
 	start_exec(data, i, -1, 0);
 }

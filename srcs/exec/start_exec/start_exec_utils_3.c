@@ -91,6 +91,6 @@ void	exec_cmnds(t_pipex *data, int index, int i)
 			ft_strlen(data->l[index]->ops[i][0]))
 				&& write(2, ": command not found\n", 21))
 			exit_child(data, index, i, 127);
-		close_pipes_array(data, index);
+		close_pipes(data, index, i);
 	}
 }

@@ -79,6 +79,7 @@ int	expand_it_1(t_pipex *d, int i, int open, char **s)
 		if (ex_1_6(d, i, open))
 			i++;
 	}
+	// printf("NEW: |%s|\n", *s);
 	d->buf_str = NULL;
-	return (elem = *s, *s = ft_strtrim(*s, " ", d), 1);
+	return (elem = *s, 1);
 }

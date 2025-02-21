@@ -105,6 +105,10 @@ void	handle_child(t_pipex *d, int i_1, int i_2)
 //         d->fd_out = dup2(d->l[i_1]->buf_pipes[i_2][1], STDOUT_FILENO);
 //     }
 
+//     if (d->fd_out == -1 || d->fd_in == -1) {
+//         perror("Error dup2");
+//         return (cl_chi_pipes(d, i_1, i_2), er_c(d));
+//     }
 //     // Call child process
 //     d->fd_out_2 = dup(STDOUT_FILENO);
 //     printf("Calling mini_child()\n");
@@ -112,19 +116,15 @@ void	handle_child(t_pipex *d, int i_1, int i_2)
 
 //     // Restore stdout
 //     printf("Restoring stdout\n");
-//     dup2(d->fd_out_2 , STDOUT_FILENO);
 //     close(d->fd_out_2);
+//     // dup2(d->fd_out_2 , STDOUT_FILENO);
 
 //     close_children_pipe(d, &d->fd_in);
+//     close_children_pipe(d, &d->fd_out);
 //     cl_chi_pipes(d, i_1, i_2);
 
-//     if (d->fd_out == -1 || d->fd_in == -1) {
-//         perror("Error dup2");
-//         return (cl_chi_pipes(d, i_1, i_2), er_c(d));
-//     }
 //     return (er_c(d));
 // }
-
 
 void	handle_mini_child(t_pipex *d, int i_1, int i_2)
 {
